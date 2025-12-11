@@ -22,7 +22,9 @@ import org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView.ProductViewE
 import jakarta.enterprise.context.ApplicationScoped;
 
 /**
- * TODO: Complete Javadoc
+ * Implémentation de Projector responsable de la transformation des événements {@link org.ormi.priv.tfa.orderflow.kernel.product.ProductEventV1}
+ * en un modèle de lecture {@link org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView}.
+ * Il applique la logique événementielle pour mettre à jour l'état du produit pour le côté lecture.
  */
 @ApplicationScoped
 public class ProductViewProjector implements Projector<ProductView, ProductEventV1Envelope<?>> {

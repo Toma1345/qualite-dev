@@ -14,7 +14,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 /**
- * TODO: Complete Javadoc
+ * Service d'application pour l'interrogation des vues de produits (modèle de lecture).
+ * Fournit des méthodes pour trouver un produit par ID, rechercher des produits par SKU, et diffuser des événements de produit.
  */
 
 @ApplicationScoped

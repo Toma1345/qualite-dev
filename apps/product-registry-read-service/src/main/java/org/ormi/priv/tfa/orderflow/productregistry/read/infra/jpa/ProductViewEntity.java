@@ -22,7 +22,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * TODO: Complete Javadoc
+ * Entité JPA représentant le modèle de lecture projeté pour un produit.
+ * Stocke des données dénormalisées et facilement interrogeables pour le service de lecture de produits.
  */
 
 @Getter

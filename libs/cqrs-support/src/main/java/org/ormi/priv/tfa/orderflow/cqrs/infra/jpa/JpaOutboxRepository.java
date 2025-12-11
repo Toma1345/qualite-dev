@@ -15,7 +15,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Implémentation JPA du {@link OutboxRepository} utilisant Panache.
+ * Implémente le patron Outbox pour la publication fiable des événements de domaine vers les consommateurs en aval (modèle de lecture).
  */
 
 @ApplicationScoped

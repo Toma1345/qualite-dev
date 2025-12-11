@@ -29,7 +29,8 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.UriInfo;
 
 /**
- * TODO: Complete Javadoc
+ * Ressource REST pour la gestion des commandes (écritures) du registre de produits.
+ * Elle mappe les requêtes HTTP entrantes aux services d'application correspondants.
  */
 
 @Path("/products")

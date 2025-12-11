@@ -5,7 +5,7 @@ import java.util.UUID;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * TODO: Complete Javadoc
+ * Objet de valeur représentant l'identifiant unique de l'agrégat {@link org.ormi.priv.tfa.orderflow.kernel.Product}.
  */
 
 public record ProductId(@NotNull UUID value) {

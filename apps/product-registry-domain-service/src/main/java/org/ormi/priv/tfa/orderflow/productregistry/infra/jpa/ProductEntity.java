@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * TODO: Complete Javadoc
+ * Entité JPA représentant l'état persistant de l'agrégat Product dans la base de données de domaine.
  */
 
 @Getter

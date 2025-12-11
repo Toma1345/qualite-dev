@@ -18,7 +18,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO: Complete Javadoc
+ * Entité JPA pour l'Outbox. Stocke les références aux événements de l'{@link EventLogEntity}
+ * qui sont en attente de publication/traitement asynchrone (par exemple, projection vers le modèle de lecture).
  */
 
 @Getter

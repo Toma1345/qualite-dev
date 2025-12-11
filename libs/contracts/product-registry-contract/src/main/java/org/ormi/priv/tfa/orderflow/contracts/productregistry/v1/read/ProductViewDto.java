@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * TODO: Complete Javadoc
+ * DTO représentant le modèle de lecture complet et dénormalisé (vue) d'un produit.
+ * Il inclut l'état actuel et un historique des événements de domaine.
  */
 
 public record ProductViewDto(

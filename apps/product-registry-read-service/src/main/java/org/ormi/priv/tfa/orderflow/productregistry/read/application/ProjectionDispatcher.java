@@ -18,7 +18,8 @@ import jakarta.resource.spi.IllegalStateException;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Responsable de la distribution des événements de domaine vers le projecteur correct (par exemple, {@link ProductViewProjector}).
+ * Il gère la mise à jour transactionnelle du modèle de lecture et diffuse les changements réussis.
  */
 
 @ApplicationScoped

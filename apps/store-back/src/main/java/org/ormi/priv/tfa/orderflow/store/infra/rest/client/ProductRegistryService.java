@@ -12,7 +12,8 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 
 /**
- * TODO: Complete Javadoc
+ * Interface MicroProfile Rest Client pour le service de lecture du registre de produits (API de requête).
+ * Utilisée pour rechercher des produits et récupérer des vues de produits.
  */
 
 @ApplicationScoped

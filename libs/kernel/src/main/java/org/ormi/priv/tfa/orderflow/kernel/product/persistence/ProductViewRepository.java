@@ -8,7 +8,7 @@ import org.ormi.priv.tfa.orderflow.kernel.product.SkuId;
 import org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView;
 
 /**
- * TODO: Complete Javadoc
+ * Interface de dépôt pour la gestion de la persistance et de la récupération du modèle de lecture {@link org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView}.
  */
 
 public interface ProductViewRepository {

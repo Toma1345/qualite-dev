@@ -33,7 +33,8 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Poller responsable de la récupération des messages prêts de l'outbox et de leur distribution pour la projection.
+ * Il utilise une approche partitionnée, planifiée et concurrente pour traiter les événements pour différents agrégats.
  */
 
 @ApplicationScoped

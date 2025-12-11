@@ -9,7 +9,8 @@ import io.smallrye.mutiny.subscription.MultiEmitter;
 import jakarta.enterprise.context.ApplicationScoped;
 
 /**
- * TODO: Complete Javadoc
+ * Service pour diffuser des événements liés aux produits à plusieurs abonnés via des flux réactifs (Multi).
+ * Utilisé pour les Server-Sent Events (SSE) ou des fonctionnalités similaires en temps réel.
  */
 
 @ApplicationScoped

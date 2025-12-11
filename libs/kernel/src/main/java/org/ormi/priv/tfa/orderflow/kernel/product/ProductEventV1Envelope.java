@@ -9,7 +9,8 @@ import org.ormi.priv.tfa.orderflow.kernel.product.ProductEventV1.ProductRegister
 import org.ormi.priv.tfa.orderflow.kernel.product.ProductEventV1.ProductRetired;
 
 /**
- * TODO: Complete Javadoc
+ * Classe abstraite pour un événement {@link org.ormi.priv.tfa.orderflow.kernel.product.ProductEventV1} de version 1 enveloppé avec des métadonnées de séquencement et d'horodatage.
+ * Fournit des classes concrètes spécifiques pour chaque type d'événement afin de prendre en charge la correspondance de motifs (pattern matching) dans la logique de projection.
  */
 
 public abstract class ProductEventV1Envelope<E extends ProductEventV1> extends EventEnvelope<E> {

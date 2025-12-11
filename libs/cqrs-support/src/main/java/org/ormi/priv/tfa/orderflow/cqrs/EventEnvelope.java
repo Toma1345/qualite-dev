@@ -4,7 +4,10 @@ import java.time.Instant;
 import java.util.UUID;
 
 /**
- * TODO: Complete Javadoc
+ * Conteneur pour un {@link DomainEvent} qui ajoute des métadonnées requises pour le traitement des événements,
+ * telles qu'un numéro de séquence unique (pour l'ordonnancement) et un horodatage.
+ *
+ * @param <E> Le type de l'événement de domaine.
  */
 
 public class EventEnvelope<E extends DomainEvent> {

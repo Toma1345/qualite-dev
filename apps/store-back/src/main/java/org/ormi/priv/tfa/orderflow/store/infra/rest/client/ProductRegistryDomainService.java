@@ -14,7 +14,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 
 /**
- * TODO: Complete Javadoc
+ * Interface MicroProfile Rest Client pour le service de domaine du registre de produits (API de commande).
+ * Utilisée pour envoyer des commandes comme l'enregistrement, le retrait et la mise à jour des produits.
  */
 
 @ApplicationScoped

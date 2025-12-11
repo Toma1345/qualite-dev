@@ -28,7 +28,8 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response.Status;
 
 /**
- * TODO: Complete Javadoc
+ * Ressource REST agissant comme une façade d'appel de procédure à distance (RPC) pour les services du registre de produits (domaine et lecture).
+ * Elle simplifie les opérations pour le frontend en combinant plusieurs appels externes en des points d'accès uniques.
  */
 
 @Path("/products")

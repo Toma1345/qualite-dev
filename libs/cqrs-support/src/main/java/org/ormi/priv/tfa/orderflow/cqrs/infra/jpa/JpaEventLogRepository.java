@@ -12,7 +12,8 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Implémentation JPA du {@link EventLogRepository} utilisant Panache.
+ * Responsable de l'ajout de nouveaux événements de domaine au journal des événements.
  */
 
 @ApplicationScoped

@@ -15,7 +15,9 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Service d'application responsable de la gestion de la commande d'enregistrement d'un nouveau produit.
+ * Il assure l'unicité de l'identifiant SKU, crée l'objet de domaine {@link Product},
+ * le persiste et publie l'événement {@link ProductRegistered}.
  */
 @ApplicationScoped
 public class RetireProductService {

@@ -3,7 +3,7 @@ package org.ormi.priv.tfa.orderflow.kernel.product.persistence;
 import org.ormi.priv.tfa.orderflow.kernel.product.ProductEventV1;
 
 /**
- * TODO: Complete Javadoc
+ * Énumération des versions prises en charge pour les événements de domaine liés au produit.
  */
 
 public enum ProductEventVersion {

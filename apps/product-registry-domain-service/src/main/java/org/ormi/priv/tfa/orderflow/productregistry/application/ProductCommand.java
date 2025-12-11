@@ -4,7 +4,7 @@ import org.ormi.priv.tfa.orderflow.kernel.product.ProductId;
 import org.ormi.priv.tfa.orderflow.kernel.product.SkuId;
 
 /**
- * TODO: Complete Javadoc
+ * Interface scellée représentant toutes les commandes disponibles pour la gestion de l'agrégat Product.
  */
 
 public sealed interface ProductCommand {

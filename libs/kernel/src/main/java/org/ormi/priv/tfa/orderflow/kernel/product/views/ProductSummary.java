@@ -12,7 +12,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 /**
- * TODO: Complete Javadoc
+ * Une vue/projection légère des informations essentielles d'un produit.
+ * Utilisée pour afficher des listes de produits ou des résultats de recherche sans charger tous les détails.
  */
 
 @Getter

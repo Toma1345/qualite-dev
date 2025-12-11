@@ -20,7 +20,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * TODO: Complete Javadoc
+ * Mapper MapStruct pour la conversion entre le modèle de lecture {@link org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView}
+ * et l'entité JPA {@link ProductViewEntity}.
+ * Gère le mappage complexe pour les champs stockés en JSON comme les événements et les catalogues.
  */
 
 @Mapper(

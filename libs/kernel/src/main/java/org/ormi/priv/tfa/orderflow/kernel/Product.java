@@ -16,7 +16,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 /**
- * TODO: Complete Javadoc
+ * La racine d'agrégat Product. Encapsule la logique métier centrale et l'état d'un produit.
+ * Il est responsable de l'application des règles métier et de la génération des événements de domaine lors des changements d'état.
  */
 
 @Getter

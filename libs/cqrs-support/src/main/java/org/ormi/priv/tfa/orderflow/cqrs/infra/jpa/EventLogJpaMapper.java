@@ -13,7 +13,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * TODO: Complete Javadoc
+ * Mapper MapStruct pour la conversion d'un {@link EventEnvelope} en {@link EventLogEntity}.
+ * Gère la sérialisation de la charge utile de l'événement vers une structure JSON.
  */
 
 @Mapper(

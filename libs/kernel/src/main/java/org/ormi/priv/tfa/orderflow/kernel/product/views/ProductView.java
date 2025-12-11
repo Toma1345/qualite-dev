@@ -16,7 +16,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 /**
- * TODO: Complete Javadoc
+ * Le modèle de lecture détaillé (Vue) pour un produit.
+ * Contient toutes les informations dénormalisées, y compris un historique des événements appliqués.
  */
 
 @Getter

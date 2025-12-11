@@ -9,7 +9,8 @@ import org.ormi.priv.tfa.orderflow.kernel.product.ProductIdMapper;
 import org.ormi.priv.tfa.orderflow.kernel.product.SkuIdMapper;
 
 /**
- * TODO: Complete Javadoc
+ * Mapper MapStruct pour la conversion entre le modèle de domaine {@link org.ormi.priv.tfa.orderflow.kernel.Product}
+ * et l'entité JPA {@link ProductEntity}.
  */
 
 @Mapper(

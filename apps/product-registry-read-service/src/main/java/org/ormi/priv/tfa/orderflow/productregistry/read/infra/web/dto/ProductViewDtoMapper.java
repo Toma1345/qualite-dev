@@ -28,7 +28,13 @@ import org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView.ProductViewC
 import org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView.ProductViewEvent;
 
 /**
- * TODO: Complete Javadoc
+ * Mapper MapStruct responsable de la conversion du modèle de lecture interne (view model)
+ * {@link org.ormi.priv.tfa.orderflow.kernel.product.views.ProductView}
+ * vers le DTO de contrat externe
+ * {@link org.ormi.priv.tfa.orderflow.contracts.productregistry.v1.read.ProductViewDto}.
+ *
+ * Il inclut des mappers imbriqués pour gérer la conversion des types de données complexes
+ * (événements historiques, catalogues et types d'événements) vers le format API.
  */
 
 @Mapper(componentModel = "cdi", builder = @Builder(disableBuilder = false), uses = {

@@ -17,7 +17,9 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Service d'application responsable de la gestion des commandes de mise à jour
+ * des informations d'un produit existant (nom et description).
+ * Il met à jour l'objet de domaine {@link Product} et publie les événements de mise à jour correspondants.
  */
 
 @ApplicationScoped

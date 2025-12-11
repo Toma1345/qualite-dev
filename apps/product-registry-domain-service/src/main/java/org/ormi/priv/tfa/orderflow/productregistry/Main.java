@@ -5,7 +5,8 @@ import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
 
 /**
- * TODO: Complete Javadoc
+ * Classe principale de l'application pour le service de domaine du registre de produits.
+ * Démarre l'application Quarkus.
  */
 
 @QuarkusMain

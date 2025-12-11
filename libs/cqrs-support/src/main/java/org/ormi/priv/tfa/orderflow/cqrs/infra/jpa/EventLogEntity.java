@@ -21,7 +21,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * TODO: Complete Javadoc
+ * Entité JPA pour le journal des événements (Event Log). Stocke tous les événements de domaine générés par les agrégats.
+ * C'est la source de vérité pour tous les changements d'état.
  */
 
 @Getter

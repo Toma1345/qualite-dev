@@ -6,7 +6,8 @@ import org.ormi.priv.tfa.orderflow.cqrs.DomainEvent;
 import org.ormi.priv.tfa.orderflow.kernel.Product;
 
 /**
- * TODO: Complete Javadoc
+ * Interface scellée représentant la version 1 de tous les événements de domaine pour l'agrégat {@link org.ormi.priv.tfa.orderflow.kernel.Product}.
+ * Cela garantit que tous les événements de produit partagent des métadonnées communes liées à l'agrégat.
  */
 
 public sealed interface ProductEventV1 extends DomainEvent {

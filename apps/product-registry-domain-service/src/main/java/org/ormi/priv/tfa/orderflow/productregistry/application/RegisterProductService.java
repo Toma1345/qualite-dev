@@ -16,7 +16,8 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Service d'application responsable de la gestion de la commande de mise hors service (retrait) d'un produit.
+ * Il met à jour l'objet de domaine {@link Product} et publie l'événement {@link ProductRetired}.
  */
 
 @ApplicationScoped

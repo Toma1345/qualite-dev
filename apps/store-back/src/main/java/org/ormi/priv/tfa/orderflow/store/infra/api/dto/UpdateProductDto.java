@@ -6,7 +6,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * TODO: Complete Javadoc
+ * DTO pour la mise à jour d'un produit avec plusieurs opérations de changement dans une seule requête.
+ * Utilise une union discriminée (interface scellée/JSON type info) pour les différents types d'opérations.
  */
 
 public record UpdateProductDto(String id, UpdateOperation[] operations) {

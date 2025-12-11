@@ -16,7 +16,9 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 /**
- * TODO: Complete Javadoc
+ * Implémentation JPA du {@link org.ormi.priv.tfa.orderflow.kernel.product.persistence.ProductRepository}
+ * utilisant Panache pour Hibernate ORM.
+ * Responsable de la persistance et de la récupération de l'agrégat {@link org.ormi.priv.tfa.orderflow.kernel.Product}.
  */
 
 @ApplicationScoped
