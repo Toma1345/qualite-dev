@@ -6,7 +6,10 @@ import java.util.stream.StreamSupport;
 
 /**
  * Projector interface for projecting events onto a state.
- * 
+ * Interface pour les composants qui transforment les événements
+ * de domaine en un modèle de lecture
+ * @param <S> Le type du modèle de lecture qui est projeté et mis à jour.
+ * @param <E> Le type de l'événement que ce projecteur consomme.
  * @author Thibaud FAURIE
  */
 public interface Projector<S, E extends EventEnvelope<? extends DomainEvent>> {
