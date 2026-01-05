@@ -31,9 +31,9 @@
    > Il résout le problème de la double écriture en s'assurant que la mise à jour de l'état métier (ex : l'agrégat ``Product``) et l'enregistrement de l'événement dans la table Outbox se produisent dans la même transaction de base de données locale. Si la transaction réussit, l'événement est garanti d'être dans l'Outbox et sera traité par un processus asynchrone séparé, le *Poller*. L'événement n'est donc jamais perdu entre la sauvegarde de l'état et sa publication.
 3. En analysant le code existant, décrire le fonctionnement de l'Outbox Pattern concrètement dans le contexte de l'application. Créez un diagramme pour illustrer le flux des événements. Créez un diagramme de séquence pour montrer le séquencement des interactions entre les différents composants. Précisez les intéractions transactionnelles.
    > Flux des événements :
-   [Go to : Réponse TP4](./RéponseTP4.md)  
-   > Diagramme de classe :
-   [Go to : Réponse TP4](./RéponseTP4.md)  
+   ![alt text](flux-evenement.drawio.png)
+   > Diagramme de séquence :
+   ![alt text](diag-sequence.png)  
 4. Expliquer comment l'Outbox Pattern peut être utilisé pour gérer les erreurs de livraison des événements dans cette base de code. Référez-vous ici au schéma de données dans les fichiers XML liquibase et aux implémentations concrètes.
    > L'Outbox Pattern gère les erreurs de livraison/traitement grâce à des champs de statut et de suivi dans la table Outbox.
 
@@ -48,9 +48,26 @@
     >   * Les implémentations robustes ajoutent souvent un champ ``retries`` (tentatives) ou un statut ``FAILED``. Après X tentatives d'échec, le *poller* marquera l'événement comme ``FAILED`` ou le déplacera dans une Dead Letter Queue (DLQ) logique, empêchant ainsi la relecture infinie et permettant une intervention manuelle ou automatisée pour inspecter et corriger la cause de l'erreur.
 
 ## Tâche 3 : Questions concernant le journal d'événements
-1. Expliquer le rôle du journal d'événements dans le système de gestion des événements.
-2. Pourquoi l'interface `EventLogRepository` ne comporte-t-elle qu'une seule méthode `append` ? Pourquoi n'y-a-t-il pas de méthode pour récupérer les événements ou les supprimer ?
-3. En tirant vos conclusions de votre réponse à la question 2 et de l'analyse de l'application (Objets liés à l'évent log, schéma de base de données), déterminez les implications de cette conception sur la gestion des événements dans l'application et quelles pourraient être les autres usages du journal d'événements.
+1. Expliquer le rôle du journal d'événements dans le système de gestion des événements.  
+    > Il fait office de source de vérité unique pour l'application. Il enregistre chaque changement sous forme d'événement immuables, permettant d'avoir un historique complet et une traçabilité totale des actions métier.
+2. Pourquoi l'interface `EventLogRepository` ne comporte-t-elle qu'une seule méthode `append` ? Pourquoi n'y-a-t-il pas de méthode pour récupérer les événements ou les supprimer ?  
+    > Il possède qu'une méthode `append` car le journal est conçu pour être en ajout uniquement : un événement passé ne peut être ni modifié, ni supprimé.
+    > Le rôle de ce dépôt est uniquement l'écriture. Raison pour laquelle il n'y a pas de méthode de suppression ou de récupération. Il doit être immuable.
+3. En tirant vos conclusions de votre réponse à la question 2 et de l'analyse de l'application (Objets liés à l'évent log, schéma de base de données), déterminez les implications de cette conception sur la gestion des événements dans l'application et quelles pourraient être les autres usages du journal d'événements.  
+    > Les ***implications*** de cette conception sur la gestion des événements permet d'éviter les conflits lors des mies à jour. Et que chaque événement enregistré sera propagé sans perte au reste du système.  
+
+    > ***Autres usages*** : reconstruire l'état d'un produit à n'importe quel moement du passé en rejouant les événements. Extraction de statistiques sur l'évolution des données sans impacter la base de production principale.
 
 ## Tâche 4 : Limites de CQRS
-...
+1. Identifier et expliquer les principales limites de l'architecture CQRS dans le contexte de l'application.  
+    > **Complexité** : multiplication du code par rapport à une architecture CRUD classique.  
+    > Délai entre l'écriture (Event Log) et la mise à jour de la vue, l'utilisateur ne voit pas toujours son chargement tout de suite.
+2. Quelles limites intrinsèques à CQRS sont déjà compensées par la mise en œuvre actuelle de l'application ?  
+    > **Perte de données** : l'usage de la table `Outbox` garantit que chaque événement sera traité même après un bug.  
+    > **Ordre des événements** : La gestion par des agrégats assure que les changements sont appliqués dans le bon ordre.
+3. Quelles autres limites pourraient être introduites par cette mise en œuvre ?  
+    > **Latence du Polling** : Le `OutboxPartitionedPoller` vérifie la base à intervalles fixes, créant un retard systématique.  
+    > **Surcharge de la base** : Le journal d'événements grossit indéfiniment, ce qui peut ralentir le système à terme.
+4. Que se passerait-il dans le cas d'une projection multiple (un évènement donnant lieu à plusieurs actions conjointes mais de nature différente) ?  
+    > Chaque action doit être indépendante et gérer son propre curseur de progression pour ne pas bloquer les autres.  
+    > Le fait d'exécuter plusieurs fois les actions ne doit pas changer le résultat final.
