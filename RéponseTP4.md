@@ -30,9 +30,9 @@
 2. Expliquer comment l'Outbox Pattern permet de garantir la livraison des événements dans un système distribué.
    > Il résout le problème de la double écriture en s'assurant que la mise à jour de l'état métier (ex : l'agrégat ``Product``) et l'enregistrement de l'événement dans la table Outbox se produisent dans la même transaction de base de données locale. Si la transaction réussit, l'événement est garanti d'être dans l'Outbox et sera traité par un processus asynchrone séparé, le *Poller*. L'événement n'est donc jamais perdu entre la sauvegarde de l'état et sa publication.
 3. En analysant le code existant, décrire le fonctionnement de l'Outbox Pattern concrètement dans le contexte de l'application. Créez un diagramme pour illustrer le flux des événements. Créez un diagramme de séquence pour montrer le séquencement des interactions entre les différents composants. Précisez les intéractions transactionnelles.
-   > Flux des événements :
-   ![alt text](flux-evenement.drawio.png)
-   > Diagramme de séquence :
+   > Flux des événements :  
+   ![alt text](flux-evenement.drawio.png)  
+   > Diagramme de séquence :  
    ![alt text](diag-sequence.png)  
 4. Expliquer comment l'Outbox Pattern peut être utilisé pour gérer les erreurs de livraison des événements dans cette base de code. Référez-vous ici au schéma de données dans les fichiers XML liquibase et aux implémentations concrètes.
    > L'Outbox Pattern gère les erreurs de livraison/traitement grâce à des champs de statut et de suivi dans la table Outbox.
